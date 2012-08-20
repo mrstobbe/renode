@@ -1,0 +1,7 @@
+FILE(GLOB sources *.cpp)
+FOREACH(src ${sources})
+	GET_FILENAME_COMPONENT(basename ${src} NAME_WE)
+	ADD_EXECUTABLE(${basename} ${basename}.cpp)
+	SET_TARGET_PROPERTIES(${basename} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin/tests)
+	TARGET_LINK_LIBRARIES(${basename} renode)
+ENDFOREACH()
