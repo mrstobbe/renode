@@ -1,3 +1,8 @@
 ADD_SUBDIRECTORY(include)
+INCLUDE_DIRECTORIES(
+	${CMAKE_BINARY_DIR}/include
+	include
+)
+
 ADD_SUBDIRECTORY(lib)
 ADD_SUBDIRECTORY(bin-tests)
